@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Qui richiamo le classi di Bootstap e jQuery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link href="media/fermi.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+
+		<script type="text/javascript" src="js/funzioni.js"></script>
+		<title>Cerca un reagente</title>
+	</head>
+
+	<body>
+		<div class="jumbotron container-fluid" style="text-align:center;">
+			<div class="row">
+				<div class="col-sm-3">
+					<img src="media/logo_itis.gif">
+				</div>
+				<div class="col-sm-8">
+					<h1>Cerca un reagente</h1>
+				</div>
+			</div>
+		</div>
+	
+		<div class="container">
+			<div class="container-fluid">
+				<form autocomplete="off" method="post" action="api/consultareagente.php">
+					<div class="row">
+						<div class="form-group">
+							<div class="col-sm-3">
+								<label for="nome">Nome del reagente</label>
+								<input type="text" class="form-control" id="nome" name="nomeReagente" placeholder="Nome del reagente">
+							</div>
+							<div class="col-sm-3">
+								<label for="aspetto">Aspetto del reagente</label>
+								<select class="form-control" id="aspetto" name="aspetto" placeholder="Aspetto del reagente">
+									<option value="" selected="true" disabled="disabled">Scegli</option>
+									<option value="solido">Solido</option>
+									<option value="liquido">Liquido</option>
+									<option value="gassoso">Gassoso</option>
+								</select>
+								<!--Questo bottone (e il suo gemello) è soggetto ad una funzione jQuery che controlla se viene cambiato
+								l'opzione nel select anitstante, se si allora questo bottone compare e viene visualizzato in modo che l'utente
+								abbia la possibilità di resettare l'input-->
+								<button type="button" class="btn btn-warning btn-block" id="resettaAspetto">Annulla la selezione</button>
+							</div>
+							<div class="col-sm-3">
+								<label for="dittaProduttrice">Ditta produttrice</label>
+								<input type="text" class="form-control" id="dittaProduttrice" name="dittaProduttrice" placeholder="Ditta produttrice">
+							</div>
+							<div class="col-sm-3">
+								<label for="aspetto">Conservazione</label>
+								<select class="form-control" id="modalitaConservazione" name="modalitaConservazione" placeholder="Modalità di conservazione">
+									<option value="" selected="true" disabled="disabled">Scegli</option>
+									<option value="contenitore_chiuso">Contenitore chiuso</option>
+									<option value="temperatura_bassa">A bassa temperatura</option>
+									<option value="temperatura_ambiente">A temperatura ambiente</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<input class="btn btn-success" type="submit" value="Cerca">
+					</div>
+				</form>
+			</div>
+
+			<!--Qui dopo il form di ricerca si potrebbe stampare già la pagina per ogni reagente che risulta dalla ricerca-->
+
+			<br>
+			<div class="row">
+				<a href="home.php"><button class="btn btn-danger">Torna indietro</button></a>
+			</div>
+			<br>
+
+		</div>
+	</body>
+</html>

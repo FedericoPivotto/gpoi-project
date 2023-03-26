@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Qui richiamo le classi di Bootstap e jQuery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link href="media/fermi.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" href="css/styles.css">
+		<script type="text/javascript" src="js/funzioni.js"></script>
+		<title>Indice</title>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<!--Header della navbar-->
+				<div class="navbar-header navElemento navTitolo">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigazioneSito">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Laboratori di Chimica</a>
+				</div>
+
+				<!--Corpo centrale della navbar-->
+				<div class="collapse navbar-collapse" id="navigazioneSito">
+					<ul class="nav navbar-nav">
+						<li><a href="/home.php" class="navElemento">Home</a></li>
+						<?php if(in_array($_SESSION['nomeCategoria'], array('Amministratore', 'Docente'))) { ?>
+							<li class="dropdown">
+								<a class="dropdown-toggle navElemento navElementoAggiungi" data-toggle="dropdown" href="#">Aggiungi
+								<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="/aggiungi_reagente.php">Reagente</a></li>
+									<li><a href="/aggiungi_vetreria.php">Vetreria</a></li>
+									<li><a href="/aggiungi_strumento.php">Strumentazione</a></li>
+								</ul>
+							</li>
+						<?php } ?>
+						<li><a href="/consulta.php" class="navElemento">Cerca dati</a></li>
+						<?php if(in_array($_SESSION['nomeCategoria'], array('Amministratore', 'Docente'))) { ?>
+							<li><a href="/gestione.php" class="navElemento navElementoElimina">Elimina dati</a></li>
+						<?php } ?>
+						<?php if(in_array($_SESSION['nomeCategoria'], array('Amministratore'))) { ?>
+							<li><a href="/admin.php" class="navElemento">Admin</a></li>
+						<?php } ?>
+					</ul>
+					<!--Parte a destra della navbar-->
+					<ul class="nav navbar-nav navbar-right navbar-collapse">
+						<li class="dropdown">
+							<a class="dropdown-toggle navElemento" data-toggle="dropdown" href="#"><?php echo $_SESSION['username']; ?>
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu" id="azioniUtente">
+								<li>
+									<a href="api/logout.php">Logout</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="jumbotron container-fluid" style="text-align:center;">
+			<div class="row">
+				<div class="col-sm-3">
+					<img src="media/logo_itis.gif">
+				</div>
+				<div class="col-sm-8">
+					<h1>Laboratori di chimica</h1>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h2>Il docente che avrà bisogno di aggiungere dei dati sceglie come prima cosa in quale tabella aggiungere dei nuovi records (del tipo "cosa vuoi aggiungere? nel menu a tendina le voci "reagente", "vetrerria"...). Inserisce i dati che servono nei campi che servono, invia il form, aggiunge i dati e bella ciao.</h2>
+
+			<div class="row">
+				<a href="home.html"><button class="btn btn-danger">Torna indietro</button></a>
+			</div>
+		</div>
+	</body>
+</html>

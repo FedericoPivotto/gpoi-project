@@ -1,0 +1,166 @@
+/*Usato nei campi come Nome del reagente, formula o stato della materia*/
+.caratteristiche
+{
+	border-radius: 50px 15px 50px 15px;
+	border-style: none;
+	color:white;
+	background: #3a6e9e;
+	transition: 0.2s;
+	padding:1%;
+}
+
+.caratteristiche:hover
+{
+	background: #fe9103;
+}
+
+/*Titoli delle sezioni come "Descrizione" o "Collocazione"*/
+.titoloSezione
+{
+	border-radius: 50px 15px 50px 15px;
+	border-style:none;
+	color:white;
+	background: #79828c;
+	transition: 0.2s;
+	padding:1%;
+}
+
+.titoloSezione:hover
+{
+	background: #e39000;
+	cursor:pointer;
+}
+
+.titoloTipo
+{
+	border-radius: 50px 15px 50px 15px;
+	border-style:none;
+	color:white;
+	background: #3a6e9e;
+	padding:1%;
+}
+
+/*Stili usati per i campi di input nelle pagine di aggiunta reagente, vetreria e strumentazione*/
+input[type=text]
+{
+	border-radius: 50px 15px 50px 15px;
+	border-style: none;
+	padding: 1% 5% 1% 5%;
+	width:100%;
+	color:black;
+	background-color: #fafafa;
+	transition: 0.2s;
+}
+
+/*Input vuoto di default, sfondo grigio*/
+input[type=text].defaultempty
+{
+	background-color: #eee;
+}
+
+/*Input lasciato vuoto di proposito, sfondo rosso*/
+input[type=text].empty
+{
+	background-color: #b3041e;
+}
+
+/*Input riempito, sfondo verde*/
+input[type=text].full
+{
+	color:white;
+	background-color: #5AB06C;
+}
+
+/*Input in uso, sfondo arancione, colore del testo bianco*/
+input[type=text]:focus
+{
+	border-style: none;
+	background-color: #fe9103;
+	color:white;
+}
+
+/*Non fa vedere l'outline rossa quando l'input è invalido*/
+input:required {
+	box-shadow:none;
+}
+input:invalid {
+	box-shadow:none;
+}
+
+/*Formattazione bottoni*/
+.btnAzioni
+{
+	border: none;
+	cursor: pointer;
+	padding: 3px 3px 3px 3px;
+	border-radius: 7px;
+	transition: 0.2s;
+	float:right;
+	margin: 1px;
+}
+
+.btnAzioni img
+{
+	width:20px;
+	height:20px;
+}
+
+.btnAzioni:hover
+{
+	border-radius: 0px;
+}
+
+.btnAzioni.btnElimina
+{
+	background-color: #c92840;
+}
+
+.btnElimina:hover
+{
+	background-color: #f5314e;
+}
+
+.btnAzioni.btnModifica
+{
+	background-color: #e08b1b;
+}
+
+.btnModifica:hover
+{
+	background-color: #fc9c1e;
+}
+
+/*Stili per la navbar*/
+.navElemento
+{
+	border-bottom: solid;
+	border-bottom-color: #3a6e9e;
+	transition: 0.1s;
+}
+
+.navElemento:hover
+{
+	border-bottom-color: #fe9103;
+}
+
+.navElemento.navElementoAggiungi:hover
+{
+	border-bottom-color:  #1de030;
+}
+
+.navElemento.navElementoElimina:hover
+{
+	border-bottom-color:  #ea2727;
+}
+
+/*td button
+{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+td button form
+{
+	margin-right: auto;
+	margin-left: auto;
+}*/

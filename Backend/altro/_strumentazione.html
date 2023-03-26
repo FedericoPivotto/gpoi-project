@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Qui richiamo le classi di Bootstap e jQuery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link href="media/fermi.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+
+		<script type="text/javascript" src="js/funzioni.js"></script>
+		<title>Bilancia</title>
+	</head>
+
+	<style>
+		
+		.caratteristiche{
+			border-radius: 50px 15px 50px 15px;
+			border-style: none;
+			color:white;
+			background: #3a6e9e;
+			transition: 0.2s;
+			padding:1%;
+		}
+
+		.caratteristiche:hover{
+			background: #fe9103;
+		}
+
+		.titoloSezione{
+			border-radius: 50px 15px 50px 15px;
+			border-style:none;
+			color:white;
+			background: #79828c;
+			transition: 0.2s;
+			padding:1%;
+		}
+
+		.titoloSezione:hover{
+			background: #e39000;
+			cursor:pointer;
+		}
+
+	</style>
+
+	<body>
+		<div class="jumbotron container-fluid" style="text-align:center;">
+			<div class="row">
+				<div class="col-sm-3">
+					<img src="media/logo_itis.gif">
+				</div>
+				<div class="col-sm-8">
+					<h1>Bilancia Volumex</h1>
+				</div>
+			</div>
+		</div>
+
+		<!--
+			- Caratteristiche generali:
+			Nome
+			Numero di inventario
+		-->
+		<div class="container">
+			<div class="container-fluid">				
+				<div class="row">
+					<div class="col-sm-6 text-center" style="padding:1%;">
+						<h4>Nome:</h4>
+						<div class="caratteristiche">
+							<!--PHPSTAMPAMI nome del reagente nella descrizione generale-->
+							<h4>Bilancia Volumex</h4>
+						</div>
+					</div>
+
+					<div class="col-sm-6 text-center" style="padding:1%;">
+						<h4>Numero di inventario:</h4>
+						<div class="caratteristiche">
+							<h4>2323</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--Caratteristiche tecniche-->
+			<div class="row">
+				<h2 class="titoloSezione text-center">Caratteristiche tecniche</h2>
+				<p>Il turbocompressore (talora noto come turbo-gruppo o turbo) è un sistema meccanico con scopo di sovralimentazione nel motore a combustione interna.
+					Il turbocompressore è costituito dall'accoppiamento tra una turbina centripeta (il lato "caldo" o lato di scarico del turbo-compressore,
+					dove vengono ricevuti i gas di scarico ad alta temperatura) e un compressore centrifugo (il lato "freddo" o lato di aspirazione,
+					nel quale viene risucchiata l'aria da comprimere). Esso costituisce il metodo più diffuso per la sovralimentazione dei motori endotermici,
+					in particolare quelli per autotrazione.
+				</p>
+			</div>
+
+			<!--
+				- Collocazione (che può esser più di una)
+				Sigla della stanza
+				Codice dell'armadio
+				Numero del ripiano nell'armadio
+				Per ogni collocazione anche la quantità presente in quel luogo
+			-->
+			<h2 class="titoloSezione text-center" id="mostra-tabella-collocazione">Collocazione</h2>
+
+			<div class="container-fluid">
+				<div class="table-responsive" id="tabella-collocazione">
+					<table class="table table-striped">
+						<thead>
+							<th>Laboratorio</th>
+							<th>Armadio</th>
+							<th>Ripiano</th>
+							<th>Quantit&agrave;</th>
+						</thead>
+						<tbody>
+							<tr>
+								<!--PHPSTAMPAMI nome del laboratorio della collocazione-->
+								<td>Microbiologia</td>
+								<!--PHPSTAMPAMI nome o codice dell'armadio-->
+								<td>B</td>
+								<!--PHPSTAMPAMI numero del ripiano-->
+								<td>5</td>
+								<!--PHPSTAMPAMI quantità-->
+								<td>451</td>
+							</tr>
+							<tr>
+								<td>Microbiologia</td>
+								<td>C</td>
+								<td>1</td>
+								<td>137</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<!--
+				- Nome manuale
+				link (se è digitale)
+				Sigla della stanza
+				Codice dell'armadio
+				Numero del ripiano nell'armadio
+			-->
+			<h2 class="titoloSezione text-center" id="mostra-tabella-scheda">Manuale</h2>
+
+			<div class="container-fluid">
+				<div class="table-responsive" id="tabella-scheda">
+					<table class="table table-striped">
+						<thead>
+							<th>Nome</th>
+							<th>Link</th>
+							<th>Laboratorio</th>
+							<th>Armadio</th>
+							<th>Ripiano</th>
+						</thead>
+						<tbody>
+							<tr>
+								<!--PHPSTAMPAMI nome del manuale-->
+								<td>Scheda della Bilancia Volumex</td>
+								<!--PHPSTAMPAMI link al manuale (se digitale)-->
+								<td><a href="https://it.wikipedia.org/wiki/Sovralimentazione_tramite_compressore_volumetrico">Link</a></td>
+								<!--PHPSTAMPAMI collocazione del manuale fisicc, laboratorio-->
+								<td>Microbiologia</td>
+								<!--PHPSTAMPAMI armadio-->
+								<td>A</td>
+								<!--PHPSTAMPAMI ripiano-->
+								<td>5</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-6">
+					<!--
+						- Storico manutenzione ordinaria
+						Azione
+						Data
+					-->
+					<h2 class="titoloSezione text-center" id="mostra-tabella-manutenzione">Manutenzione ordinaria</h2>
+
+					<div class="container-fluid" id="tabella-manutenzione">
+						<div class="table-responsive">
+							<table class="table table-striped">
+								<thead>
+									<th>Data</th>
+									<th>Cosa è stato fatto</th>
+								</thead>
+								<tbody>
+									<tr>
+										<!--PHPSTAMPAMI data-->
+										<td><b>22/04/2020</b></td>
+										<!--PHPSTAMPAMI tipo di manutenzione-->
+										<td>Sostituzione della valvola <i></i>wastegate</i> e installazione di sistema Anti Lag</td>
+									</tr>
+									<tr>
+										<td><b>26/04/2020</b></td>
+										<td>Pulitura e calibratura a 30 PSI</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6">
+					<!--
+						- Storico manutenzione straordinaria
+						Data
+						Azione
+					-->
+					<h2 class="titoloSezione text-center" id="mostra-tabella-manutenzione-str">Manutenzione straordinaria</h2>
+
+					<div class="container-fluid" id="tabella-manutenzione-str">
+						<div class="table-responsive">
+							<table class="table table-striped">
+								<thead>
+									<th>Data</th>
+									<th>Cosa è stato fatto</th>
+								</thead>
+								<tbody>
+									<tr>
+										<!--PHPSTAMPAMI data-->
+										<td><b>22/04/2020</b></td>
+										<!--PHPSTAMPAMI tipo di manutenzione-->
+										<td>Sostituzione della valvola <i></i>wastegate</i> e installazione di sistema Anti Lag</td>
+									</tr>
+									<tr>
+										<td><b>26/04/2020</b></td>
+										<td>Pulitura e calibratura a 30 PSI</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--
+				- Riparazione
+				Data
+				Motivazione
+			-->
+			<h2 class="titoloSezione text-center" id="mostra-tabella-scheda">Riparazione</h2>
+
+			<div class="container-fluid">
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<th>Data</th>
+							<th>Motivazione della riparazione</th>
+						</thead>
+						<tbody>
+							<tr>
+								<!--PHPSTAMPAMI data-->
+								<td><b>30/04/2020</b></td>
+								<!--PHPSTAMPAMI tipo di riparazione-->
+								<td>Rottura della valvola Blow Off</td>
+							</tr>
+							<tr>
+								<td><b>04/05/2020</b></td>
+								<td>Rimappatura centralina ECM</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Qui richiamo le classi di Bootstap e jQuery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link href="media/fermi.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+
+		<script type="text/javascript" src="js/funzioni.js"></script>
+		<title>Becher</title>
+	</head>
+
+	<style>
+
+		.caratteristiche{
+			border-radius: 50px 15px 50px 15px;
+			border-style: none;
+			color:white;
+			background: #3a6e9e;
+			transition: 0.2s;
+			padding:1%;
+		}
+
+		.caratteristiche:hover{
+			background: #fe9103;
+		}
+
+		.titoloSezione{
+			border-radius: 50px 15px 50px 15px;
+			border-style: none;
+			color:white;
+			background: #79828c;
+			transition: 0.2s;
+			padding:1%;
+		}
+
+		.titoloSezione:hover{
+			background: #e39000;
+			cursor:pointer;
+		}
+
+	</style>
+
+	<body>
+		<div class="jumbotron container-fluid" style="text-align:center;">
+			<div class="row">
+				<div class="col-sm-3">
+					<img src="media/logo_itis.gif">
+				</div>
+				<div class="col-sm-8">
+					<h1>Becher</h1>
+				</div>
+			</div>
+		</div>
+		<!--
+			- Caratteristiche generali:
+			Nome
+			Numero di inventario
+		-->
+		<div class="container">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-6 text-center" style="padding:1%;">
+						<h4>Nome:</h4>
+						<div class="caratteristiche">
+							<!--PHPSTAMPAMI nome del reagente nella descrizione generale-->
+							<h4>Becher 1000ml</h4>
+						</div>
+					</div>
+			</div>
+
+			<h2 class="titoloSezione text-center" id="mostra-tabella-collocazione">Collocazione</h2>
+
+			<div class="container-fluid">
+				<div class="table-responsive" id="tabella-collocazione">
+					<table class="table table-striped">
+						<thead>
+							<th>Laboratorio</th>
+							<th>Armadio</th>
+							<th>Ripiano</th>
+							<th>Quantit&agrave;</th>
+							<th>Data di verifica della quantit&agrave;</th>
+							<th>Data di scadenza</th>
+						</thead>
+						<tbody>
+							<tr>
+								<!--PHPSTAMPAMI nome del laboratorio della collocazione-->
+								<td>Microbiologia</td>
+								<!--PHPSTAMPAMI nome o codice dell'armadio-->
+								<td>B</td>
+								<!--PHPSTAMPAMI numero del ripiano-->
+								<td>5</td>
+								<!--PHPSTAMPAMI quantità-->
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>Microbiologia</td>
+								<td>C</td>
+								<td>1</td>
+								<td>1</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<!--
+				- Nome manuale
+				link (se è digitale)
+				Sigla della stanza
+				Codice dell'armadio
+				Numero del ripiano nell'armadio
+			-->
+
+
+		</div>
+	</body>
+</html>
