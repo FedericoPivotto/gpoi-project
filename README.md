@@ -4,7 +4,7 @@ Software gestionale per i laboratori di Chimica e Biotecnologie
 
 ## Ruoli
 
-**Project Manager:**
+**Project manager:**
  * Federico Pivotto
 
 **Backend developers:**
